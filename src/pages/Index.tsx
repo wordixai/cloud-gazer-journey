@@ -5,7 +5,7 @@ import SearchLocation from '@/components/SearchLocation';
 import WeatherCard from '@/components/WeatherCard';
 import ForecastDisplay from '@/components/ForecastDisplay';
 import LoadingState from '@/components/LoadingState';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 // Mock data
 const mockWeatherData = {
@@ -55,7 +55,9 @@ const Index = () => {
   };
   
   const getBackgroundStyle = () => {
-    switch(weather.weatherType) {
+    const weatherType = weather.weatherType;
+    
+    switch(weatherType) {
       case 'sunny':
         return 'bg-gradient-to-br from-blue-400 to-blue-50';
       case 'cloudy':
